@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    font-family: fantasy;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: darkgray;
+}
+
+.quiz-box {
+    width: 80%;
+    margin: 100px auto 0;
+    background: lightblue;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+h1 {
+    font-weight: 30px;
+    color: maroon;
+    border-bottom: solid maroon 1px;
+    padding-bottom: 20px;
+}
+
+.quiz {
+    padding: 25px 0;
+}
+
+#question {
+    font-size: 20px;
+    font-size: 25px;
+}
+
+.guess {
+    width: 100%;
+    padding: 10px;
+    color: maroon;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.guess:hover {
+    background: maroon;
+    color: black;
+}
+
+#next {
+    background: darkgrey;
+    width: 5%;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
