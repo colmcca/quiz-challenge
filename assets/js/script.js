@@ -43,8 +43,11 @@ var questions = [
 ];
 
 var questionElement = document.getElementById("question");
+var startButton = document.getElementById("start");
 var answerOptions = document.getElementById("answer-options");
 var nextButton = document.getElementById("next");
+var startButton = document.getElementById("timer");
+
 
 var currentQuestion = 0;
 var score = 0;
@@ -67,6 +70,10 @@ function showQuestion() {
         button.innerHTML = answer.text;
         button.classList.add("guess");
         answerOptions.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
     });
 }
 
@@ -77,4 +84,51 @@ function resetState() {
     }
 }
 
+function selectAnswer(e) {
+    var selectedButton = e.target;
+    var answerCorrect = selectedButton.dataset.correct === "true";
+    if (answerCorrect) {
+        selectedButton.classList.add("correct");
+        score++;
+    }
+    else {
+        selectedButton.classList.add("wrong");
+    }
+    Array.from(answerOptions.children).forEach(button => {
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct");
+        }
+        button.disabled = true;
+    });
+    nextButton.style.display = "block";
+}
+
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `You answered ${score} out of 4 questions correctly!`
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+}
+
+function clickNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length) {
+        showQuestion();
+    }
+    else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", ()=> {
+    if(currentQuestionIndex < questions.length) {
+        clickNextButton();
+    }
+    else{ startQuiz();
+
+    }
+})
+
+
 startQuiz();
+

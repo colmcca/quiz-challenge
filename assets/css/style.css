@@ -57,3 +57,19 @@ h1 {
     cursor: pointer;
     display: none;
 }
+
+.correct {
+    background: green;
+}
+
+.wrong {
+    background: red;
+}
+
+#timer-box {
+    text-align: center;
+}
+
+#start-button {
+    font-size: large;
+}
