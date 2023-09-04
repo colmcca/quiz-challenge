@@ -12,7 +12,7 @@ N/A
 
 Once you enter the web page, you will see a question asking which state capital belongs to Ohio. This is the first question of four. 
 
-When you select an answer, the app will change the color of the correct answer to green. If you selected a wrong answer, the answer you selected will change to the color red. Here is an example of a incorrect guess: ![Alt text](assets/images/wrong-answer.png)
+When you select an answer, the app will change the color of the correct answer to green. If you selected a wrong answer, the answer you selected will change to the color red. After guessing, you will need to press the next button to show the next question. Here is an example of an incorrect guess: ![Alt text](assets/images/wrong-answer.png)
 
 ## Credits
 
